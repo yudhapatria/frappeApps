@@ -1,0 +1,313 @@
+{
+ "etype": "AttributeError", 
+ "evalue": "AttributeError(\"'RequestPinjaman' object has no attribute 'request_line'\",)", 
+ "exception": {
+  "args": "(\"'RequestPinjaman' object has no attribute 'request_line'\",)", 
+  "message": "\"'RequestPinjaman' object has no attribute 'request_line'\""
+ }, 
+ "frames": [
+  {
+   "call": "(request=<Request 'http://0.0.0.0:8000/' [POST]>)", 
+   "dump": {
+    "frappe. handler": "<module 'frappe.handler' from '/opt/misnext/frappe-training/apps/frappe/frappe/handler.pyc'>", 
+    "frappe.handler. handle": "<function handle>", 
+    "global frappe": "<module 'frappe' from '/opt/misnext/frappe-training/apps/frappe/frappe/__init__.pyc'>", 
+    "response": "None"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/app.py", 
+   "func": "application", 
+   "lines": {
+    "59": "", 
+    "60": "\t\tif frappe.local.form_dict.cmd:", 
+    "61": "\t\t\tresponse = frappe.handler.handle()", 
+    "62": "", 
+    "63": "\t\telif frappe.request.path.startswith(\"/api/\"):"
+   }, 
+   "lnum": 61
+  }, 
+  {
+   "call": "()", 
+   "dump": {
+    "cmd": "u'frappe.desk.form.save.savedocs'", 
+    "data": "None", 
+    "global execute_cmd": "<function execute_cmd>"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/handler.py", 
+   "func": "handle", 
+   "lines": {
+    "19": "", 
+    "20": "\tif cmd!='login':", 
+    "21": "\t\tdata = execute_cmd(cmd)", 
+    "22": "", 
+    "23": "\t# data can be an empty string or list which are valid responses"
+   }, 
+   "lnum": 21
+  }, 
+  {
+   "call": "(cmd=u'frappe.desk.form.save.savedocs', from_async=False)", 
+   "dump": {
+    "frappe. call": "<function call>", 
+    "frappe. form_dict": "{'action': u'Submit', 'doc': u'{\"modified_by\":\"A...24Z\"}', 'cmd': u'frappe.desk.form.save.savedocs'}", 
+    "global frappe": "<module 'frappe' from '/opt/misnext/frappe-training/apps/frappe/frappe/__init__.pyc'>", 
+    "method": "<function savedocs>"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/handler.py", 
+   "func": "execute_cmd", 
+   "lines": {
+    "54": "\tis_whitelisted(method)", 
+    "55": "", 
+    "56": "\treturn frappe.call(method, **frappe.form_dict)", 
+    "57": "", 
+    "58": ""
+   }, 
+   "lnum": 56
+  }, 
+  {
+   "call": "(fn=<function savedocs>, *args=(), **kwargs={'action': u'Submit', 'cmd': u'frappe.desk.form.save.savedocs', 'doc': u'{\"modified_by\":\"Administrator\",\"name\":\"REQUEST...ull,\"__last_sync_on\":\"2019-04-05T03:09:56.024Z\"}'})", 
+   "dump": {
+    "args": "()", 
+    "fn": "<function savedocs>", 
+    "newargs": "{'action': u'Submit', 'doc': u'{\"modified_by\":\"Administrator\",\"name\":\"REQUEST...ull,\"__last_sync_on\":\"2019-04-05T03:09:56.024Z\"}'}"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/__init__.py", 
+   "func": "call", 
+   "lines": {
+    "1017": "\tnewargs = get_newargs(fn, kwargs)", 
+    "1018": "", 
+    "1019": "\treturn fn(*args, **newargs)", 
+    "1020": "", 
+    "1021": "def get_newargs(fn, kwargs):"
+   }, 
+   "lnum": 1019
+  }, 
+  {
+   "call": "(doc=<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>, action=u'Submit')", 
+   "dump": {
+    "doc": "<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>", 
+    "doc. submit": "<bound method RequestPinjaman.submit of <library...injaman.request_pinjaman.RequestPinjaman object>>"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/desk/form/save.py", 
+   "func": "savedocs", 
+   "lines": {
+    "17": "", 
+    "18": "\t\tif doc.docstatus==1:", 
+    "19": "\t\t\tdoc.submit()", 
+    "20": "\t\telse:", 
+    "21": "\t\t\ttry:"
+   }, 
+   "lnum": 19
+  }, 
+  {
+   "call": "(self=<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>)", 
+   "dump": {
+    "self": "<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>", 
+    "self. _submit": "<bound method RequestPinjaman._submit of <librar...injaman.request_pinjaman.RequestPinjaman object>>"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py", 
+   "func": "submit", 
+   "lines": {
+    "846": "\tdef submit(self):", 
+    "847": "\t\t\"\"\"Submit the document. Sets `docstatus` = 1, then saves.\"\"\"", 
+    "848": "\t\tself._submit()", 
+    "849": "", 
+    "850": "\t@whitelist.__func__"
+   }, 
+   "lnum": 848
+  }, 
+  {
+   "call": "(self=<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>)", 
+   "dump": {
+    "self": "<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>", 
+    "self. save": "<bound method RequestPinjaman.save of <libraryku...injaman.request_pinjaman.RequestPinjaman object>>"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py", 
+   "func": "_submit", 
+   "lines": {
+    "835": "\t\t\"\"\"Submit the document. Sets `docstatus` = 1, then saves.\"\"\"", 
+    "836": "\t\tself.docstatus = 1", 
+    "837": "\t\tself.save()", 
+    "838": "", 
+    "839": "\t@whitelist.__func__"
+   }, 
+   "lnum": 837
+  }, 
+  {
+   "call": "(self=<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>, *args=(), **kwargs={})", 
+   "dump": {
+    "args": "()", 
+    "kwargs": "{}", 
+    "self": "<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>", 
+    "self. _save": "<bound method RequestPinjaman._save of <libraryk...injaman.request_pinjaman.RequestPinjaman object>>"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py", 
+   "func": "save", 
+   "lines": {
+    "258": "\tdef save(self, *args, **kwargs):", 
+    "259": "\t\t\"\"\"Wrapper for _save\"\"\"", 
+    "260": "\t\treturn self._save(*args, **kwargs)", 
+    "261": "", 
+    "262": "\tdef _save(self, ignore_permissions=None, ignore_version=None):"
+   }, 
+   "lnum": 260
+  }, 
+  {
+   "call": "(self=<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>, ignore_permissions=None, ignore_version=None)", 
+   "dump": {
+    "self": "<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>", 
+    "self. run_post_save_methods": "<bound method RequestPinjaman.run_post_save_meth...injaman.request_pinjaman.RequestPinjaman object>>"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py", 
+   "func": "_save", 
+   "lines": {
+    "311": "", 
+    "312": "\t\tself.update_children()", 
+    "313": "\t\tself.run_post_save_methods()", 
+    "314": "", 
+    "315": "\t\treturn self"
+   }, 
+   "lnum": 313
+  }, 
+  {
+   "call": "(self=<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>)", 
+   "dump": {
+    "self": "<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>", 
+    "self. run_method": "<bound method RequestPinjaman.run_method of <lib...injaman.request_pinjaman.RequestPinjaman object>>"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py", 
+   "func": "run_post_save_methods", 
+   "lines": {
+    "905": "\t\t\tself.run_method(\"on_update\")", 
+    "906": "\t\telif self._action==\"submit\":", 
+    "907": "\t\t\tself.run_method(\"on_update\")", 
+    "908": "\t\t\tself.run_method(\"on_submit\")", 
+    "909": "\t\telif self._action==\"cancel\":"
+   }, 
+   "lnum": 907
+  }, 
+  {
+   "call": "(self=<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>, method=u'on_update', *args=(), **kwargs={})", 
+   "dump": {
+    "Document. hook": "<function hook>", 
+    "args": "()", 
+    "fn": "<function on_update>", 
+    "global Document": "<class 'frappe.model.document.Document'>", 
+    "kwargs": "{}", 
+    "out": "undefined", 
+    "self": "<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py", 
+   "func": "run_method", 
+   "lines": {
+    "770": "", 
+    "771": "\t\tfn.__name__ = str(method)", 
+    "772": "\t\tout = Document.hook(fn)(self, *args, **kwargs)", 
+    "773": "", 
+    "774": "\t\tself.run_notifications(method)"
+   }, 
+   "lnum": 772
+  }, 
+  {
+   "call": "(self=<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>, *args=(), **kwargs={})", 
+   "dump": {
+    "args": "()", 
+    "composed": "<function runner>", 
+    "kwargs": "{}", 
+    "method": "'on_update'", 
+    "self": "<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py", 
+   "func": "composer", 
+   "lines": {
+    "1046": "", 
+    "1047": "\t\t\tcomposed = compose(f, *hooks)", 
+    "1048": "\t\t\treturn composed(self, method, *args, **kwargs)", 
+    "1049": "", 
+    "1050": "\t\treturn composer"
+   }, 
+   "lnum": 1048
+  }, 
+  {
+   "call": "(self=<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>, method='on_update', *args=(), **kwargs={})", 
+   "dump": {
+    "add_to_return_value": "<function add_to_return_value>", 
+    "args": "()", 
+    "fn": "<function on_update>", 
+    "kwargs": "{}", 
+    "self": "<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py", 
+   "func": "runner", 
+   "lines": {
+    "1029": "\t\tdef compose(fn, *hooks):", 
+    "1030": "\t\t\tdef runner(self, method, *args, **kwargs):", 
+    "1031": "\t\t\t\tadd_to_return_value(self, fn(self, *args, **kwargs))", 
+    "1032": "\t\t\t\tfor f in hooks:", 
+    "1033": "\t\t\t\t\tadd_to_return_value(self, f(self, method, *args, **kwargs))"
+   }, 
+   "lnum": 1031
+  }, 
+  {
+   "call": "(self=<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>, *args=(), **kwargs={})", 
+   "dump": {
+    "args": "()", 
+    "builtin getattr": "<built-in function getattr>", 
+    "fn": "undefined", 
+    "kwargs": "{}", 
+    "method": "u'on_update'", 
+    "self": "<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py", 
+   "func": "<lambda>", 
+   "lines": {
+    "764": "", 
+    "765": "\t\tif hasattr(self, method) and hasattr(getattr(self, method), \"__call__\"):", 
+    "766": "\t\t\tfn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)", 
+    "767": "\t\telse:", 
+    "768": "\t\t\t# hack! to run hooks even if method does not exist"
+   }, 
+   "lnum": 766
+  }, 
+  {
+   "call": "(self=<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>)", 
+   "dump": {
+    "self": "<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>", 
+    "self. on_approve": "<bound method RequestPinjaman.on_approve of <lib...injaman.request_pinjaman.RequestPinjaman object>>"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/libraryku/libraryku/library_ku/doctype/request_pinjaman/request_pinjaman.py", 
+   "func": "on_update", 
+   "lines": {
+    "11": "", 
+    "12": "\tdef on_update(self):", 
+    "13": "\t\tself.on_approve()", 
+    "14": "", 
+    "15": "\tdef on_approve(self):"
+   }, 
+   "lnum": 13
+  }, 
+  {
+   "call": "(self=<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>)", 
+   "dump": {
+    "i": "undefined", 
+    "self": "<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>", 
+    "self.request_line": "undefined"
+   }, 
+   "file": "/opt/misnext/frappe-training/apps/libraryku/libraryku/library_ku/doctype/request_pinjaman/request_pinjaman.py", 
+   "func": "on_approve", 
+   "lines": {
+    "19": "\t\t\tpinjaman.tanggal_pinjam = self.tanggal_pinjam", 
+    "20": "\t\t\tpinjaman.estimasi_tanggal_kembali = self.estimasi_tanggal_kembali", 
+    "21": "\t\t\tfor i in self.request_line:", 
+    "22": "\t\t\t\tpinjaman.append('data_pinjaman_buku',{", 
+    "23": "\t\t\t\t\t'code_buku' : i.code_buku,"
+   }, 
+   "lnum": 21
+  }
+ ], 
+ "locals": {
+  "pinjaman": "<libraryku.library_ku.doctype.pinjaman.pinjaman.Pinjaman object>", 
+  "self": "<libraryku.library_ku.doctype.request_pinjaman.request_pinjaman.RequestPinjaman object>"
+ }, 
+ "pyver": "Python 2.7.15rc1: /opt/misnext/frappe-training/env/bin/python (prefix: /opt/misnext/frappe-training/env)", 
+ "timestamp": "2019-04-05 10:10:02.661489", 
+ "traceback": "Traceback (most recent call last):\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/app.py\", line 61, in application\n    response = frappe.handler.handle()\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/handler.py\", line 21, in handle\n    data = execute_cmd(cmd)\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/handler.py\", line 56, in execute_cmd\n    return frappe.call(method, **frappe.form_dict)\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/__init__.py\", line 1019, in call\n    return fn(*args, **newargs)\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/desk/form/save.py\", line 19, in savedocs\n    doc.submit()\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py\", line 848, in submit\n    self._submit()\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py\", line 837, in _submit\n    self.save()\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py\", line 260, in save\n    return self._save(*args, **kwargs)\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py\", line 313, in _save\n    self.run_post_save_methods()\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py\", line 907, in run_post_save_methods\n    self.run_method(\"on_update\")\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py\", line 772, in run_method\n    out = Document.hook(fn)(self, *args, **kwargs)\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py\", line 1048, in composer\n    return composed(self, method, *args, **kwargs)\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py\", line 1031, in runner\n    add_to_return_value(self, fn(self, *args, **kwargs))\n  File \"/opt/misnext/frappe-training/apps/frappe/frappe/model/document.py\", line 766, in <lambda>\n    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)\n  File \"/opt/misnext/frappe-training/apps/libraryku/libraryku/library_ku/doctype/request_pinjaman/request_pinjaman.py\", line 13, in on_update\n    self.on_approve()\n  File \"/opt/misnext/frappe-training/apps/libraryku/libraryku/library_ku/doctype/request_pinjaman/request_pinjaman.py\", line 21, in on_approve\n    for i in self.request_line:\nAttributeError: 'RequestPinjaman' object has no attribute 'request_line'\n"
+}
